@@ -1,0 +1,3 @@
+const description = "I am a masters student at Aalto University studying Human-Computer Interaction as my major, and I have completed a Batchelor’s degree in Computer Science. I have designed and developed applications and user interfaces during my three and a half years of studies spanning from deployed websites to designed prototypes. You can view these projects from below, inspect their source codes from Github and view them from their links.";
+
+export default description;
