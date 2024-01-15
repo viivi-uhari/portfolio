@@ -1,7 +1,7 @@
 const projectsInfo = [
   {
     id: 0, isMoved: false, isSelected: false, layout: 'option2', 
-    width: 445, 
+    width: 470, 
     translateY: '20px', scrollMarginTop: '80px',
     gridColumns: 'min(105px, 27%) min(72px, 18%) min(70px, 25%)',
     gridRows: '50% 50%',
@@ -9,7 +9,7 @@ const projectsInfo = [
     image: "recipe_stash.png",
     alt: 'Recipe Stash',
     technologies: ['JavaScript', 'Mongo DB', 'React', 'Node.js', 'CSS', 'Figma'],
-    description: 'This web application is meant for storing recipes quickly and easily so that they can eb found from the same location. The idea was to simplify the current recipe applications, that require a lot of clicking, into a cleaner and more attractive version for users who live a busy life, such as students. This application was designed and developed in a 3-person team.',
+    description: 'This web application is meant for storing recipes quickly and easily so that they can eb found from the same location. The idea was to simplify the current recipe applications into a cleaner and more attractive version for users who live busy lives. The application was developed in a 3-person team, and we also designed it carefully with the help of personas, use cases and user stories.',
     github: 'https://github.com/portmil/recipe-stash',
     link: 'https://recipe-stash.onrender.com',
     date: '09/2023 - 11/2023',
@@ -27,8 +27,8 @@ const projectsInfo = [
   },
   {
     id: 1, isMoved: false, isSelected: false, layout: 'option1',
-    width: 565, imageWidth: 460, imageHeight: 310, 
-    translateY: '60px', scrollMarginTop: '145px',
+    width: 540, imageWidth: 322, imageHeight: 300, 
+    translateY: '60px', scrollMarginTop: '195px',
     gridColumns: 'min(100px, 22%) min(70px, 14%) min(70px, 14%) min(200px, 40%)',
     gridRows: '50% 50%',
     title: 'Aalto Grades',
@@ -50,7 +50,7 @@ const projectsInfo = [
   },
   {
     id: 2, isMoved: false, isSelected: false, layout: 'option1', 
-    width: 500, imageWidth: 300, imageHeight: 300,
+    width: 505, imageWidth: 300, imageHeight: 300,
     translateY: '50px', scrollMarginTop: '80px',
     gridColumns: 'min(105px, 25%) min(70px, 15%) min(200px, 40%)',
     gridRows: '50% 50%',
@@ -74,8 +74,8 @@ const projectsInfo = [
   },
   {
     id: 3, isMoved: false, isSelected: false, layout: 'option2',
-    width: 510,
-    translateY: '50px', scrollMarginTop: '80px',
+    width: 505,
+    translateY: '50px', scrollMarginTop: '110px',
     gridColumns: 'min(63px, 14%) min(120px, 32%) min(70px, 20%)',
     gridRows: '100%',
     title: 'Virtual Cassino',
@@ -98,7 +98,7 @@ const projectsInfo = [
   {
     id: 4, isMoved: false, isSelected: false, layout: 'option2',
     width: 505,
-    translateY: '40px', scrollMarginTop: '80px',
+    translateY: '40px', scrollMarginTop: '83px',
     gridColumns: 'min(110px, 25%) min(60px, 11%) min(130px, 38%)',
     gridRows: '50% 50%',
     title: 'Popularity of Vaccines',
@@ -117,7 +117,7 @@ const projectsInfo = [
   {
     id: 5, isMoved: false, isSelected: false, layout: 'option1',
     width: 505, imageWidth: 395, imageHeight: 365,
-    translateY: '50px', scrollMarginTop: '125px',
+    translateY: '50px', scrollMarginTop: '80px',
     gridColumns: '100%',
     gridRows: '100%',
     title: 'Planting Trees',

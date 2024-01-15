@@ -12,7 +12,7 @@ const notoSans = Noto_Sans({ weight: '300', subsets: ['latin'] });
 
 function ProjectLayout1({project}) {
   return (
-    <>
+    <div className={styles['project-layout-1']}>
       <div className={styles['image-technologies']}>
         { project.image &&
           <Image
@@ -37,13 +37,13 @@ function ProjectLayout1({project}) {
         <h2 className={titanOne.className}>{project.title}</h2>
         <p className={notoSans.className}>{project.description}</p>
       </div>
-    </>
+    </div>
   )
 };
 
 function ProjectLayout2({project, screenWidth}) {
   return (
-    <>
+    <div className={`${styles['project-layout-2']} ${project.layout === 'option1' ? styles['extra'] : ''}`}>
     { project.image &&
       <Image
         src={`/images/${project.image}`}
@@ -70,7 +70,7 @@ function ProjectLayout2({project, screenWidth}) {
       </div>
       <div className={styles['line-separator']}/>
     </div>
-  </>
+  </div>
  )
 };
 
@@ -119,6 +119,8 @@ export default function Project({project, projects, setProjects}) {
     }
   };*/
 
+  //550
+
   const buttonRef = useRef(null);
 
   /* Get the position of this pop up (so the button that opens this pop up),
@@ -129,15 +131,13 @@ export default function Project({project, projects, setProjects}) {
     <div ref={projectRef} className={`${styles[projectClass]} 
       ${project.isMoved ? styles['move-down'] : ''} 
       ${project.id % 2 === 0 ? styles['first-column'] : styles['second-column']}`}
-      style={{ width: project.width, scrollMargin: project.scrollMarginTop}}
+      style={{ width: project.width, scrollMarginTop: project.scrollMarginTop}}
       >
-        <p className={`${styles['date-text']} ${notoSans.className}`} style={{ position: project.datePosition, top: '25px', left: '27px' }}>
+        <p className={`${styles['date-text']} ${notoSans.className}`} style={{ position: project.datePosition, top: '23px', left: '25px' }}>
           {project.date}
         </p>
-        { project.layout === 'option1' && newWidth.width > 550 ? 
-          <ProjectLayout1 project={project} /> : 
-          <ProjectLayout2 project={project} screenWidth={newWidth.width}/>
-        }
+        { project.layout === 'option1' && <ProjectLayout1 project={project} /> }
+        <ProjectLayout2 project={project} screenWidth={newWidth.width}/>
         <div className={styles['bottom-container']}>
          <div className={styles['project-links']}>
           { project.github &&
@@ -157,7 +157,6 @@ export default function Project({project, projects, setProjects}) {
             <button ref={buttonRef} className={styles['see-more']} onClick={() => {
               transition();
               //setCenterProject();
-              //style={{scrollMargin: project.scrollMarginBottom}} 
             }}>
               <div className={`${styles['circle-background']} ${project.isSelected ? styles['move-down'] : ''}`}>
                 <div className={`${styles['select-arrow']} ${project.isSelected ? styles['move-down'] : ''} `}/>

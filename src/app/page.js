@@ -130,7 +130,7 @@ export default function Home() {
           )})}
         </div>
         <div className={styles['end-container']}>
-          <button id={styles['top-btn']} className={titanOne.className} onClick={() => {
+          <button id={styles['top-btn']} className='__className_2a725e' onClick={() => {
             window.scrollTo({top: 0, behavior: "smooth"});
           }}>TO TOP</button>
         </div>

@@ -4,26 +4,14 @@ import { useState, useEffect } from 'react';
 
 const listenToResize = (elementRef) => {
 
-  const getWidth = () => {
-    if (typeof window !== 'undefined') {
-      return {
-        width: window.innerWidth,
-      }
-    } else {
-      return {
-        width: 0,
-      }
-    }
-  };
-  
-  const [newWidth, setNewWidth] = useState(getWidth);
+  const [newWidth, setNewWidth] = useState({ width: undefined });
   
   useEffect(() => {
     if (!elementRef.current) {
       return false;
     }
     const handleChange = () => {
-      setNewWidth(getWidth());
+      setNewWidth({ width: window.innerWidth });
     };
     window.addEventListener('resize', handleChange);
     return () => {

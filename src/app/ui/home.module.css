@@ -83,6 +83,22 @@
     position: relative;
 }
 
+.project-layout-1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+}
+
+.project-layout-2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 20px;
+}
+
 .date-text {
     font-size: 12px;
     margin-bottom: -10px;
@@ -214,12 +230,12 @@
 }
 
 .images-content { 
-    /* width: 1350px;*/
-    width: 100%;
+    width: 1500px;
     height: 100%;
     position: relative;
     align-self: center;
     overflow-x: scroll;
+    overflow-y: hidden;
 }
 
 .images-border {
@@ -252,9 +268,8 @@
     display: flex;
    flex-direction: row;
   align-items: center;
-  width: 100%;
+  width: 1050px;
   justify-content: flex-end;
-  padding: 0px 13vw;
 }
 
 @media only screen and (min-width: 1101px){ 
@@ -300,6 +315,21 @@
     .project-container {
         min-width: 565px;
     }
+
+    .end-container {
+        width: 565px;
+      }
+
+
+  }
+
+  @media only screen and (min-width: 551px) and (max-width: 650px){ 
+
+    .end-container {
+        max-width: 80vw;
+      }
+
+
   }
 
 @media only screen and (max-width: 650px){ 
@@ -316,12 +346,13 @@
         max-width: 90vw;
     }
 
+
     #myself {
         max-height: 30vw;
     }
 
     .header {
-        max-width: 78vw;
+        max-width: 80vw;
     }
 
     .home-page-container {
@@ -333,8 +364,23 @@
   @media only screen and (max-width: 550px){ 
 
   .header {
-    max-width: 80vw;
+    max-width: 84vw;
 }
+
+  .project-layout-1 {
+    display: none;
+  }
+  .end-container {
+    max-width: 90vw;
+  }
+
+  }
+
+  @media only screen and (min-width: 551px){ 
+
+    .project-layout-2.extra {
+        display: none;
+      }
 
   }
 
@@ -342,6 +388,13 @@
 
     .project-container {
         max-width: 90vw;
+    }
+
+    .project-layout-1 {
+        gap: 15px;
+    }
+
+    .project-layout-2 {
         gap: 15px;
     }
 
@@ -458,3 +511,35 @@
         font-size: 12px;
      }
   }
+
+
+  @media only screen and (max-width: 650px){ 
+
+    #top-btn  {
+      font-size: 18px;
+    }
+  
+  }
+  
+  
+  @media only screen and (max-width: 450px){ 
+  
+
+    #top-btn {
+      font-size: 16px;
+    }
+
+  
+  }
+  
+  
+  @media only screen and (max-width: 360px){ 
+  
+
+    #top-btn  {
+      font-size: 16px;
+    }
+
+  
+  }
+  

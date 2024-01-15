@@ -25,7 +25,7 @@ body::-webkit-scrollbar { width: 0 !important }
 
 h1 {
     text-align: left;
-    font-size: 65px;
+    font-size: 70px;
     line-height: 85px;
     color: #225A44
 }
@@ -52,12 +52,21 @@ svg {
     fill: #1B1A17
 }
 
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+}
+
 .nav-bar {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   padding: 0px 13vw;
   margin-top: 40px;
+  width: 100%;
+  max-width: 2000px;
 }
 
 .nav-links {
@@ -116,6 +125,21 @@ svg {
 #linkedin:hover {
   fill: #2D29D0;
 }
+
+@media only screen and (min-width: 1801px){ 
+
+  .nav-bar {
+    padding: 0px 400px;
+}
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 1101px){ 
+
+  .nav-bar {
+    padding: 0px 8vw;
+}
+}
+
 
 @media only screen and (max-width: 900px){ 
 
@@ -181,7 +205,7 @@ svg {
 @media only screen and (min-width: 551px) and (max-width: 650px){ 
 
   h1 {
-    font-size: 10.5vw;
+    font-size: 11vw;
   }
 
 }
