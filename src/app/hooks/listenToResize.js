@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 
 /* A hook to listen to resize events and to return the window's width */
 
-const listenToResize = (elementRef) => {
+const useListenToResize = (elementRef) => {
 
   const [newWidth, setNewWidth] = useState({ width: undefined });
   
@@ -22,4 +22,4 @@ const listenToResize = (elementRef) => {
   return newWidth;
 };
 
-export default listenToResize;
+export default useListenToResize;

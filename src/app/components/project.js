@@ -4,7 +4,7 @@ import styles from '@/app/ui/home.module.css';
 import { useRef } from 'react';
 import { Titan_One, Days_One, Noto_Sans } from 'next/font/google'
 import Image from 'next/image';
-import listenToResize from '../hooks/listenToResize';
+import useListenToResize from '../hooks/listenToResize';
 
 const titanOne = Titan_One({ weight: '400', subsets: ['latin'] });
 const daysOne = Days_One({ weight: '400', subsets: ['latin'] });
@@ -110,7 +110,7 @@ export default function Project({project, projects, setProjects}) {
 
   /* Get the position of this pop up (so the button that opens this pop up),
      and use it to configure its position in the desktop view */
-  const newWidth = listenToResize(projectRef);
+  const newWidth = useListenToResize(projectRef);
 
   return (
     <div ref={projectRef} className={`${styles[projectClass]} 
