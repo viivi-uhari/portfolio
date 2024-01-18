@@ -1,8 +1,8 @@
-'use client'
+'use client';
 
 import styles from '@/app/ui/home.module.css';
-import { useState, useRef, createRef, useEffect } from 'react';
-import { Oi, Titan_One, Days_One, Noto_Sans } from 'next/font/google'
+import { useState, useRef, createRef } from 'react';
+import { Oi, Noto_Sans } from 'next/font/google';
 import Image from 'next/image';
 import Project from './components/project';
 import React from 'react';
@@ -11,16 +11,12 @@ import projectsInfo from './constants/projects';
 import description from './constants/description';
 
 const oi = Oi({ weight: '400', subsets: ['latin'] });
-const titanOne = Titan_One({ weight: '400', subsets: ['latin'] });
-const daysOne = Days_One({ weight: '400', subsets: ['latin'] });
 const notoSans = Noto_Sans({ weight: '300', subsets: ['latin'] });
 
 export default function Home() {
 
   const [projects, setProjects] = useState(projectsInfo);
-
   const [selectedProjectId, setSelectedProjectId] = useState(null);
-
   const projectRefs = useRef({});
 
   return (

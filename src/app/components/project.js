@@ -1,7 +1,7 @@
-'use client'
+'use client';
 
 import styles from '@/app/ui/home.module.css';
-import { useState, useRef, useEffect } from 'react';
+import { useRef } from 'react';
 import { Titan_One, Days_One, Noto_Sans } from 'next/font/google'
 import Image from 'next/image';
 import listenToResize from '../hooks/listenToResize';
@@ -106,21 +106,6 @@ export default function Project({project, projects, setProjects}) {
   };
 
   const projectRef = useRef(null);
-
-  /*
-  const setCenterProject = () => {
-    
-    if (buttonRef.current && !project.isSelected) {
-      // Scroll the entire page to the images-background
-      buttonRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    } else if (projectRef.current && project.isSelected) {
-      // Scroll the entire page to the images-background
-      projectRef.current.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-  };*/
-
-  //550
-
   const buttonRef = useRef(null);
 
   /* Get the position of this pop up (so the button that opens this pop up),
@@ -156,7 +141,6 @@ export default function Project({project, projects, setProjects}) {
             <p className={notoSans.className}>See more</p>
             <button ref={buttonRef} className={styles['see-more']} onClick={() => {
               transition();
-              //setCenterProject();
             }}>
               <div className={`${styles['circle-background']} ${project.isSelected ? styles['move-down'] : ''}`}>
                 <div className={`${styles['select-arrow']} ${project.isSelected ? styles['move-down'] : ''} `}/>
