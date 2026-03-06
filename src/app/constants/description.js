@@ -1,3 +1,0 @@
-const description = "I am a masters student at Aalto University studying Human-Computer Interaction as my major with a Batchelor’s degree in Computer Science. I have designed and developed applications and UIs during my three and a half years of studies spanning from deployed websites to prototypes. You can view these projects from below, inspect their source codes from Github and view them in action from their links.";
-
-export default description;

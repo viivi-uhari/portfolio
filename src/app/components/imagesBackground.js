@@ -1,6 +1,6 @@
 'use client'
 
-import styles from '@/app/ui/home.module.css';
+import styles from '@/app/ui/projects.module.css';
 import { useState, useRef, useEffect } from 'react';
 import Image from 'next/image';
 
@@ -27,7 +27,7 @@ export default function ImagesBackground({project}) {
             width={0}
             height={0}
             sizes="100vw"
-            alt="Logo of Inclusive Helsinki"
+            alt=""
             placeholder="blur"
             blurDataURL={`/images/${image.src}`}
             style={{position: 'absolute', width: image.width, top: image.top, left: image.left}}

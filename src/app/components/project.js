@@ -1,6 +1,6 @@
 'use client';
 
-import styles from '@/app/ui/home.module.css';
+import styles from '@/app/ui/projects.module.css';
 import { useRef } from 'react';
 import { Titan_One, Days_One, Noto_Sans } from 'next/font/google'
 import Image from 'next/image';
@@ -9,6 +9,7 @@ import useListenToResize from '../hooks/listenToResize';
 const titanOne = Titan_One({ weight: '400', subsets: ['latin'] });
 const daysOne = Days_One({ weight: '400', subsets: ['latin'] });
 const notoSans = Noto_Sans({ weight: '300', subsets: ['latin'] });
+const notoSansH3 = Noto_Sans({ weight: '600', subsets: ['latin'] });
 
 function ProjectLayout1({project}) {
   return (
@@ -22,19 +23,21 @@ function ProjectLayout1({project}) {
             sizes="100vw"
             style={{ width: project.imageWidth, height: project.imageHeight }}
             className={styles['project-image']}
-            alt="Logo of Inclusive Helsinki"
+            alt=""
             placeholder="blur"
             blurDataURL={`/images/${project.image}`}
           />
         }
         <div className={styles['technologies-option1']}>
         { project.technologies.map((technology, index) => {
-          return <p key={index} className={`${styles['technology']} ${daysOne.className}`}>{technology}</p>
+          return <p key={index} className={`${styles['technology']} ${daysOne.className}`}>{
+            screenWidth < 550 && project.shortTechnologies ? project.shortTechnologies[index] : technology
+          }</p>
         }) }
         </div>
       </div>
       <div className={styles['project-text']}>
-        <h2 className={titanOne.className}>{project.title}</h2>
+        <h3 className={titanOne.className}>{project.title}</h3>
         <p className={notoSans.className}>{project.description}</p>
       </div>
     </div>
@@ -52,13 +55,13 @@ function ProjectLayout2({project, screenWidth}) {
         sizes="100vw"
         style={{ width: '100vw', height: 'auto' }}
         className={styles['project-image']}
-        alt="Logo of Inclusive Helsinki"
+        alt=""
         placeholder="blur"
         blurDataURL={`/images/${project.image}`}
       />
     }
     <div className={styles['project-text']}>
-      <h2 className={titanOne.className}>{project.title}</h2>
+      <h3 className={titanOne.className}>{project.title}</h3>
       <p className={notoSans.className}>{project.description}</p>
       <div className={styles['line-separator']}/>
       <div className={styles['technologies-option2']} style={{ gridTemplateColumns: project.gridColumns, gridTemplateRows: project.gridRows }}>
@@ -125,20 +128,20 @@ export default function Project({project, projects, setProjects}) {
         <ProjectLayout2 project={project} screenWidth={newWidth.width}/>
         <div className={styles['bottom-container']}>
          <div className={styles['project-links']}>
+          { project.link &&
+            <a className={daysOne.className} href={project.link} rel="noopener noreferrer" target='_blank'>
+              View project
+            </a>
+          }
           { project.github &&
             <a className={daysOne.className} href={project.github} rel="noopener noreferrer" target='_blank'>
               GitHub
             </a>
           }
-          { project.link &&
-            <a className={daysOne.className} href={project.link} rel="noopener noreferrer" target='_blank'>
-              Link
-            </a>
-          }
         </div>
         { project.images.length !== 0 &&
           <div className={styles['button-container']}>
-            <p className={notoSans.className}>See more</p>
+            <p className={notoSans.className}>View gallery</p>
             <button ref={buttonRef} className={styles['see-more']} onClick={() => {
               transition();
             }}>
