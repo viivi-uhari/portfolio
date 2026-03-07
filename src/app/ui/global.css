@@ -79,7 +79,7 @@ nav {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-top: 40px;
+    margin: 40px 0px;
     width: 100%;
     max-width: 1040px;
 }
@@ -90,7 +90,7 @@ nav {
     justify-content: flex-start;
     align-items: center;
     padding: 0px 13vw;
-    margin-top: 40px;
+    margin: 40px 0px;
     width: 100%;
     max-width: 2000px;
     gap: 30px;
@@ -264,7 +264,6 @@ nav {
     align-items: flex-start;
     justify-content: center;
     text-align: left;
-    margin: 50px 0vw 5px 0vw;
     max-width: 1035px;
 }
 
@@ -275,7 +274,6 @@ nav {
     padding: 8px 15px;
     border-radius: 12px;
     align-self: left;
-    margin-top: 20px;
     margin-bottom: 55px
 }
 
@@ -287,22 +285,18 @@ nav {
 @media only screen and (max-width: 1280px){ 
 
     .header-text {
-        margin: 50px 0vw 0px 0vw;
+        margin: 0px 0vw;
     }
 }
 
 @media only screen and (max-width: 1170px){ 
 
     .nav-bar {
-      margin: 40px 11vw 0px 11vw;
+      margin: 40px 11vw 40px 11vw;
     }
 
     .header-text {
-        margin: 40px 11vw 0px 11vw;
-    }
-
-    #top-btn {
-        margin-top: 0px;
+        margin: 0px 11vw 0px 11vw;
     }
 }
 
@@ -317,14 +311,14 @@ nav {
     }
 
     .header-text {
-        margin: 35px 11vw -15px 11vw;
+        margin: 0px 11vw 0px 11vw;
     }
 }
 
 @media only screen and (max-width: 700px){ 
 
     .nav-bar {
-        margin: 40px 0vw 0px 0vw;
+        margin: 40px 0vw 40px 0vw;
         width: 555px;
     }
 
@@ -337,7 +331,7 @@ nav {
     }
 
     .header-text {
-        margin: 35px 0vw -15px 0vw;
+        margin: 0px 0vw 0px 0vw;
         width: 555px;
     }
 
@@ -349,7 +343,7 @@ nav {
 @media only screen and (max-width: 650px){
 
     .nav-bar {
-        margin: 40px 0vw 0px 0vw;
+        margin: 40px 0vw 40px 0vw;
         width: 540px
     }
 
@@ -381,7 +375,7 @@ nav {
     .header-text {
         padding: 0px 40px;
         width: 100%;
-        margin: 25px 0vw -5px 0vw;
+        margin: 0px 0vw 0px 0vw;
     }
 
     #v-icon {
@@ -389,9 +383,9 @@ nav {
     }
 
     #top-btn  {
-        margin-top: 5px;
         font-size: 18px;
         margin-bottom: 48px;
+        margin-top: 10px;
     }
 }
 
@@ -424,6 +418,7 @@ nav {
 @media only screen and (max-width: 550px){ 
 
     .mobile-nav-bar {
+        margin: 30px 0px;
         padding: 0px 25px;
     }
 
@@ -456,8 +451,12 @@ nav {
     .header-text {
         padding: 0px 25px;
         width: 100%;
-        margin: 20px 0vw -10px 0vw;
+        margin: 0px 0vw 0px 0vw;
         gap: 15px;
+    }
+
+    #top-btn  {
+        margin-bottom: 45px;
     }
 }
 
@@ -465,7 +464,7 @@ nav {
 
     .mobile-nav-bar {
         padding: 0px 15px;
-        margin-top: 30px;
+        margin: 30px 0px;
         gap: 20px;
     }
 
@@ -496,7 +495,7 @@ nav {
     .header-text {
         padding: 0px 15px;
         width: 100%;
-        margin: 15px 0vw -5px 0vw;
+        margin: 0px 0vw 0px 0vw;
         gap: 10px;
     }
 
@@ -513,7 +512,6 @@ nav {
     }
 
     #top-btn {
-        margin-top: 5px;
         font-size: 16px;
         margin-bottom: 40px;
     }
@@ -540,11 +538,22 @@ nav {
     }
 }
 
+@media only screen and (max-width: 400px){ 
+
+    .mobile-nav-bar {
+        margin: 25px 0px;
+    }
+
+    #top-btn  {
+        margin-bottom: 40px;
+    }
+}
+
 @media only screen and (max-width: 360px){ 
 
     .mobile-nav-bar {
         padding: 0px 15px;
-        margin-top: 25px;
+        margin: 25px 0px;
         font-size: 16px;
     }
 

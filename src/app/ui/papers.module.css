@@ -4,13 +4,13 @@
     align-items: center;
     justify-content: center;
     width: 100%;
+    gap: 40px;
 }
 
 #description {
     color: #1B1A17;
     white-space: pre-line;
     font-size: 16px;
-    margin-bottom: 55px;
 }
 
 .column-papers {
@@ -18,7 +18,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 0px auto 33px auto;
+    margin: 0px auto 18px auto;
     gap: 40px
 }
 
@@ -172,7 +172,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 0px auto 55px auto;
+        margin: 0px auto 18px auto;
         gap: 50px
     }
 
@@ -205,13 +205,13 @@
     .paper-container {
         min-width: 565px;
     }
+
+    .end-container {
+        min-width: 565px;
+    }
 }
 
 @media only screen and (max-width: 650px){ 
-
-    #description {
-        margin-bottom: 0px;
-    }
 
     .page-container {
         gap: 45px;
@@ -232,6 +232,10 @@
         max-width: 84vw;
     }
 
+    .end-container {
+        width: 84vw;
+    }
+
 }
 
 @media only screen and (max-width: 550px){ 
@@ -241,7 +245,7 @@
     }
 
     .end-container {
-        max-width: 90vw;
+        width: 90vw;
     }
 
 }
@@ -265,8 +269,7 @@
     }
 
     .end-container {
-        width: 100%;
-        margin: auto;
+        width: 90vw;
     }
 
     .paper-titles {
