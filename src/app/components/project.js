@@ -64,7 +64,10 @@ function ProjectLayout2({project, screenWidth}) {
       <h3 className={titanOne.className}>{project.title}</h3>
       <p className={notoSans.className}>{project.description}</p>
       <div className={styles['line-separator']}/>
-      <div className={styles['technologies-option2']} style={{ gridTemplateColumns: project.gridColumns, gridTemplateRows: project.gridRows }}>
+      <div className={styles['technologies-option2']} style={{ 
+        gridTemplateColumns: screenWidth < 550 ? project.shortGridColumns : project.gridColumns, 
+        gridTemplateRows: project.gridRows 
+      }}>
       { project.technologies.map((technology, index) => {
         return <p key={index} className={`${styles['technology']} ${daysOne.className}`}>{
           screenWidth < 550 && project.shortTechnologies ? project.shortTechnologies[index] : technology
