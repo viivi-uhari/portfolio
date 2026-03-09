@@ -4,11 +4,10 @@ import styles from '@/app/ui/papers.module.css';
 import { Oi, Titan_One, Noto_Sans } from 'next/font/google';
 import React from 'react';
 import { useState } from 'react';
-import {papersDescription} from '../constants/descriptions';
+import { papersDescription } from '../constants/descriptions';
 import papersInfo from '../constants/papers';
 import Paper from '../components/paper';
 
-const oi = Oi({ weight: '400', subsets: ['latin'] });
 const titanOne = Titan_One({ weight: '400', subsets: ['latin'] });
 const notoSans = Noto_Sans({ weight: '300', subsets: ['latin'] });
 
@@ -24,7 +23,7 @@ export default function Papers() {
               My Academic Papers
             </h2>
             <p id={styles['description']} className={notoSans.className}>{papersDescription}</p>
-        </div>
+          </div>
         <div className={styles['column-papers']}>
           {papers.map((paper, index) => {
             return (

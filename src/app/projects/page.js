@@ -1,16 +1,14 @@
 'use client';
 
 import styles from '@/app/ui/projects.module.css';
-import { useState, useRef, createRef } from 'react';
 import { Oi, Titan_One, Noto_Sans } from 'next/font/google';
-import Image from 'next/image';
-import Project from '../components/project';
 import React from 'react';
+import { useState, useRef, createRef } from 'react';
+import Project from '../components/project';
 import ImagesBackground from '../components/imagesBackground';
 import projectsInfo from '../constants/projects';
-import {projectsDescription} from '../constants/descriptions';
+import { projectsDescription } from '../constants/descriptions';
 
-const oi = Oi({ weight: '400', subsets: ['latin'] });
 const titanOne = Titan_One({ weight: '400', subsets: ['latin'] });
 const notoSans = Noto_Sans({ weight: '300', subsets: ['latin'] });
 

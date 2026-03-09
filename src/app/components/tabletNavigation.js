@@ -1,32 +1,29 @@
 'use client'
 
 import { useState, useRef, useEffect } from 'react';
-import Link from 'next/link';
 import { Titan_One } from 'next/font/google';
 import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 const titanOne = Titan_One({ weight: '400', subsets: ['latin'] });
 
 export default function TabletNavigation() {
   const [isOpen, setIsOpen] = useState(false);
   const pathname = usePathname();
-  const containerRef = useRef(null); // wrapper for both hamburger + menu
+  const containerRef = useRef(null);
 
   const toggleMenu = () => setIsOpen(!isOpen);
   const handleLinkClick = () => setIsOpen(false);
 
-  // Close menu when clicking outside of container
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (containerRef.current && !containerRef.current.contains(event.target)) {
         setIsOpen(false);
       }
     };
-
     if (isOpen) {
       document.addEventListener('mousedown', handleClickOutside);
     }
-
     return () => document.removeEventListener('mousedown', handleClickOutside);
   }, [isOpen]);
 
@@ -34,11 +31,9 @@ export default function TabletNavigation() {
     const handleScroll = () => {
       setIsOpen(false);
     };
-
     if (isOpen) {
       window.addEventListener('scroll', handleScroll);
     }
-
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -48,13 +43,13 @@ export default function TabletNavigation() {
     <nav>
       <div className='nav-bar'>
         <div className='nav-links'>
-        {/* Home (Logo) */}
-        <Link href="/" onClick={handleLinkClick} className={titanOne.className}>
+          {/* Home (Logo) */}
+          <Link href="/" onClick={handleLinkClick} className={titanOne.className}>
             <svg id="v-icon" viewBox="0 0 60 50" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M6.69824 2.5332L6.90625 2.55664L9.23438 2.90039C20.3356 4.48667 23.5194 4.14127 26.0352 3.86816L26.209 3.85449C27.4771 3.79366 28.5262 4.59044 28.9189 5.66992C28.953 5.59301 28.9847 5.51714 29.0186 5.44434L29.1357 5.21973C29.7618 4.13826 31.0119 3.66248 32.1455 3.93164C40.1153 5.82466 48.0985 4.73993 52.3838 3.89648L52.5947 3.86328C53.6477 3.73948 54.6928 4.23391 55.2578 5.16211C56.5236 7.24218 57.3622 9.9808 57.4844 12.6904C57.6057 15.3827 57.0271 18.4047 55.0127 20.6934C54.2725 21.534 53.2043 21.7503 52.335 21.5547C52.2899 21.6018 52.2222 21.6812 52.1367 21.8105C51.7073 22.4603 51.4019 23.399 50.999 24.5752C47.9575 33.4546 45.9137 38.5778 44.2588 41.624C43.4216 43.1649 42.6164 44.3033 41.7344 45.1504C40.8056 46.0424 39.9009 46.5062 39.0537 46.8359C38.5197 47.0438 37.8619 47.1421 37.3652 47.2031C36.789 47.2739 36.0998 47.3293 35.3496 47.3721C33.8445 47.4579 31.982 47.4996 30.0547 47.5C26.2466 47.5008 21.9515 47.3401 19.5439 46.9844C19.2875 46.9465 19.0469 46.8742 18.8242 46.7744V46.7734C16.3066 45.6445 14.0274 43.2587 12.1533 39.96C10.2575 36.623 8.66276 32.1604 7.6123 26.5479C7.58724 26.4139 7.57257 26.2808 7.56738 26.1514C7.44362 23.0627 6.9313 21.5968 6.57617 21.0088C6.5615 20.9845 6.54549 20.9645 6.5332 20.9453C5.60693 20.9529 4.5433 20.5135 4.00195 19.4023C2.61778 16.5608 2.37414 13.3447 2.55078 10.6768C2.72709 8.01382 3.34453 5.57968 3.98535 4.14551L4.09668 3.92285C4.65356 2.9225 5.71825 2.46224 6.69824 2.5332ZM28.6025 18.6572C28.3516 18.902 28.0609 19.0996 27.7471 19.2324C27.744 19.2337 27.7346 19.2375 27.7168 19.252C27.6976 19.2676 27.6639 19.299 27.6201 19.3564C27.5273 19.4784 27.4151 19.6831 27.3154 19.9863C27.1084 20.6164 27.0551 21.3684 27.1035 21.8867C27.2396 23.3431 27.7863 25.1851 28.5498 26.9102C28.6411 27.1164 28.7334 27.3166 28.8262 27.5098C28.8486 27.4655 28.8722 27.4215 28.8945 27.377C29.704 25.7628 30.3856 24.1858 30.6484 23.1504C30.7993 22.5561 30.9172 21.7933 30.8965 20.9268C30.1972 20.7667 29.5695 20.3375 29.1738 19.6992C28.9615 19.3566 28.7718 19.0086 28.6025 18.6572Z" fill="#2B8766" stroke="#2D29D0"/>
             </svg>
-        </Link>
-        <div className="relative" ref={containerRef}>
+          </Link>
+          <div className="relative" ref={containerRef}>
             {/* Hamburger menu */}
             <button onClick={toggleMenu} className={`hamburger-menu ${isOpen ? 'open' : ''}`}>
               <div className='hamburger-line'></div>
@@ -63,12 +58,12 @@ export default function TabletNavigation() {
             </button>
             {/* Popup menu */}
             <div className={`popup-menu ${isOpen ? 'open' : ''}`}>
-                <div className="popup-menu-links">
-                    {<Link onClick={handleLinkClick} className={`${pathname === '/projects' ? "active" : ""} ${titanOne.className}`} href="/projects">PROJECTS</Link>}
-                    {<Link onClick={handleLinkClick} className={`${pathname === '/papers' ? "active" : ""} ${titanOne.className}`} href="/papers">PAPERS</Link>}
-                </div>
+              <div className="popup-menu-links">
+                {<Link onClick={handleLinkClick} className={`${pathname === '/projects' ? "active" : ""} ${titanOne.className}`} href="/projects">PROJECTS</Link>}
+                {<Link onClick={handleLinkClick} className={`${pathname === '/papers' ? "active" : ""} ${titanOne.className}`} href="/papers">PAPERS</Link>}
+              </div>
             </div>
-        </div>
+          </div>
         </div>
         <div className='nav-icons'>
           <a href="/files/resume_2024.pdf" rel="noopener noreferrer" target='_blank' className={titanOne.className}  id='resume'>RESUME</a>

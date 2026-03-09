@@ -1,15 +1,14 @@
 'use client';
 
 import styles from '@/app/ui/projects.module.css';
-import { useRef } from 'react';
 import { Titan_One, Days_One, Noto_Sans } from 'next/font/google'
+import { useRef } from 'react';
 import Image from 'next/image';
 import useListenToResize from '../hooks/listenToResize';
 
 const titanOne = Titan_One({ weight: '400', subsets: ['latin'] });
 const daysOne = Days_One({ weight: '400', subsets: ['latin'] });
 const notoSans = Noto_Sans({ weight: '300', subsets: ['latin'] });
-const notoSansH3 = Noto_Sans({ weight: '600', subsets: ['latin'] });
 
 function ProjectLayout1({project}) {
   return (
@@ -123,14 +122,14 @@ export default function Project({project, projects, setProjects}) {
       ${project.isMoved ? styles['move-down'] : ''} 
       ${project.id % 2 === 0 ? styles['first-column'] : styles['second-column']}`}
       style={{ scrollMarginTop: project.scrollMarginTop}}
-      >
-        <p className={`${styles['date-text']} ${notoSans.className}`} style={{ position: project.datePosition, top: '23px', left: '25px' }}>
-          {project.date}
-        </p>
-        { project.layout === 'option1' && <ProjectLayout1 project={project} /> }
-        <ProjectLayout2 project={project} screenWidth={newWidth.width}/>
-        <div className={styles['bottom-container']}>
-         <div className={styles['project-links']}>
+    >
+      <p className={`${styles['date-text']} ${notoSans.className}`} style={{ position: project.datePosition, top: '23px', left: '25px' }}>
+        {project.date}
+      </p>
+      { project.layout === 'option1' && <ProjectLayout1 project={project} /> }
+      <ProjectLayout2 project={project} screenWidth={newWidth.width}/>
+      <div className={styles['bottom-container']}>
+        <div className={styles['project-links']}>
           { project.link &&
             <a className={daysOne.className} href={project.link} rel="noopener noreferrer" target='_blank'>
               View project
@@ -154,7 +153,7 @@ export default function Project({project, projects, setProjects}) {
             </button>
           </div>
         }
-        </div>
       </div>
+    </div>
   )
 }

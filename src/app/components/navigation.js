@@ -1,11 +1,10 @@
 'use client'
 
-import { Titan_One, Days_One } from 'next/font/google';
-import Link from 'next/link'
+import { Titan_One } from 'next/font/google';
 import { usePathname } from 'next/navigation';
+import Link from 'next/link';
 
 const titanOne = Titan_One({ weight: '400', subsets: ['latin'] });
-const daysOne = Days_One({ weight: '400', subsets: ['latin'] });
 
 export default function Navigation() {
 
