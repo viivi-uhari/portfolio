@@ -35,7 +35,7 @@ export default function Paper({paper, papers, setPapers}) {
   return (
     <div className={`${styles['paper-container']}
       ${paper.id % 2 === 0 ? styles['first-column'] : styles['second-column']}`}
-      style={{ width: paper.width, scrollMarginTop: paper.scrollMarginTop}}
+      style={{scrollMarginTop: paper.scrollMarginTop}}
       >
         <div className={styles['top-info']}>
           <p className={`${styles['date-text']} ${notoSans.className}`} style={{ position: paper.datePosition, top: '23px', left: '25px' }}>

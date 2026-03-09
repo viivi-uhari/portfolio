@@ -122,7 +122,7 @@ export default function Project({project, projects, setProjects}) {
     <div ref={projectRef} className={`${styles[projectClass]} 
       ${project.isMoved ? styles['move-down'] : ''} 
       ${project.id % 2 === 0 ? styles['first-column'] : styles['second-column']}`}
-      style={{ width: project.width, scrollMarginTop: project.scrollMarginTop}}
+      style={{ scrollMarginTop: project.scrollMarginTop}}
       >
         <p className={`${styles['date-text']} ${notoSans.className}`} style={{ position: project.datePosition, top: '23px', left: '25px' }}>
           {project.date}

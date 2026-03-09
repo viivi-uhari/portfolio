@@ -23,6 +23,7 @@
 }
 
 .paper-container {
+    width: 1035px;
     height: auto;
     background-color: #FFFFFF;
     border-radius: 10px;
@@ -172,7 +173,7 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        margin: 0px auto 18px auto;
+        margin-bottom: 18px;
         gap: 50px
     }
 
@@ -184,12 +185,18 @@
 
 @media only screen and (max-width: 1170px){ 
 
+    .column-papers {
+        padding: 0px 11vw;
+    }
+
     .paper-container {
-        max-width: 77vw;
+        width: 100%;
     }
 
     .end-container {
-        width: 77vw;
+        width: 100%;
+        max-width: none;
+        padding: 0px 11vw;
     }
 }
 
@@ -200,14 +207,19 @@
     }
 }
 
-@media only screen and (min-width: 651px) and (max-width: 1170px){ 
+@media only screen and (max-width: 700px){ 
 
     .paper-container {
-        min-width: 565px;
+        width: 555px;
+    }
+
+    .column-papers {
+        padding: 0px 0vw;
     }
 
     .end-container {
-        min-width: 565px;
+        width: 555px;
+        padding: 0px 0vw;
     }
 }
 
@@ -217,37 +229,34 @@
         gap: 45px;
     }
 
+    .paper-container {
+        width: 100%;
+    }
+
     .paper-titles {
         gap: 16px;
     }
 
     .column-papers {
-        margin: 0px auto 0px auto;
-    }
-}
-
-@media only screen and (max-width: 600px){ 
-
-    .paper-container {
-        max-width: 84vw;
+        padding: 0px 40px;
+        margin-bottom: 0px;
     }
 
     .end-container {
-        width: 84vw;
+        width: 100%;
+        padding: 0px 40px;
     }
-
 }
 
 @media only screen and (max-width: 550px){ 
 
-    .paper-container {
-        max-width: 90vw;
+    .column-papers {
+        padding: 0px 25px;
     }
-
+    
     .end-container {
-        width: 90vw;
+        padding: 0px 25px;
     }
-
 }
 
 @media only screen and (max-width: 500px){ 
@@ -268,10 +277,6 @@
         gap: 40px;
     }
 
-    .end-container {
-        width: 90vw;
-    }
-
     .paper-titles {
         gap: 15px;
     }
@@ -287,12 +292,17 @@
         font-size: 14px;
     }
 
-    .column-papers {
-        gap: 40px
-    }
-
     .paper-titles {
         gap: 13px;
+    }
+
+    .column-papers {
+        gap: 40px;
+        padding: 0px 15px;
+    }
+
+    .end-container {
+        padding: 0px 15px;
     }
 }
 
