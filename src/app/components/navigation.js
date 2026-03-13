@@ -23,7 +23,7 @@ export default function Navigation() {
           {<Link className={`${pathname === '/papers' ? "active" : ""} ${titanOne.className}`} href="/papers">PAPERS</Link>}
         </div>
         <div className='nav-icons'>
-          <a href="/files/resume_2024.pdf" rel="noopener noreferrer" target='_blank' className={titanOne.className}  id='resume'>RESUME</a>
+          <a href="/files/resume_2026.pdf" rel="noopener noreferrer" target='_blank' className={titanOne.className}  id='resume'>RESUME</a>
           {/* Github */}
           <a href="https://github.com/viivi-uhari" rel="noopener noreferrer" target='_blank'>
             <svg id='github' viewBox="0 0 192 191" fill="none" xmlns="http://www.w3.org/2000/svg">

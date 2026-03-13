@@ -61,7 +61,7 @@ export default function MobileNavigation() {
               <div className="popup-menu-links">
                 {<Link onClick={handleLinkClick} className={`${pathname === '/projects' ? "active" : ""} ${titanOne.className}`} href="/projects">PROJECTS</Link>}
                 {<Link onClick={handleLinkClick} className={`${pathname === '/papers' ? "active" : ""} ${titanOne.className}`} href="/papers">PAPERS</Link>}
-                <a onClick={handleLinkClick} href="/files/resume_2024.pdf" rel="noopener noreferrer" target='_blank' className={titanOne.className} id='resume'>
+                <a onClick={handleLinkClick} href="/files/resume_2026.pdf" rel="noopener noreferrer" target='_blank' className={titanOne.className} id='resume'>
                   RESUME
                   <svg id="opens-tab-icon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
